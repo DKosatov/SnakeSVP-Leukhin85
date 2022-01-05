@@ -45,7 +45,6 @@ namespace Snake
         private int speed = startSpeed;    
 
         SoundPlayer GameOverSound = new SoundPlayer("../../Resources/gameover.wav");
-        SoundPlayer AppleEaten = new SoundPlayer("../../Resources/AppleEaten.wav");
         SoundPlayer ButtonClick = new SoundPlayer("../../Resources/knopka.wav");
         MediaPlayer BackgroundMusic = new MediaPlayer();
 
@@ -53,7 +52,6 @@ namespace Snake
 
         string score_t, speed_t, status_t;
 
-        private Image myApple;
 
         public Rectangle field;
         public Rectangle snakeDot;
@@ -61,7 +59,6 @@ namespace Snake
         public Rectangle borderBottom;
         public Rectangle borderMiddle;
 
-        applegen4 myLogic;
         borders genb;
 
         private void MainGameLoop(object sender, EventArgs e)//
@@ -71,10 +68,8 @@ namespace Snake
 
             if (!isGameOver)
             {
-                drawApple();
                 drawSnake();
                 drawborders();
-                //checkApple();
                 textbox.SetResourceReference(TagProperty, "In_Game");
                 gameStatusLabel.Content = status_t + textbox.Tag;
                 lvl4Field.Children.Remove(GameOverLb);
@@ -99,8 +94,7 @@ namespace Snake
         }
 
         private void initGame()//
-        {
-            myLogic = new applegen4();   
+        { 
             genb = new borders();
             Thread.CurrentThread.Priority = ThreadPriority.Highest;
 
@@ -121,8 +115,7 @@ namespace Snake
             timer = new DispatcherTimer();
             timer.Tick += MainGameLoop;
             timer.Start();
-            UpdateSpeed();
-            myLogic.createApple(SIZE, DOT_SIZE, x, y);    
+            UpdateSpeed(); 
             genb.generateBorders();
             BackgroundMusic.Open(new Uri("../../Resources/iwbplus.mp3", UriKind.RelativeOrAbsolute));
             BackgroundMusic.Play();
@@ -148,20 +141,6 @@ namespace Snake
                 x[0] -= DOT_SIZE;
             }
         }
-
-        /*private void checkApple()//
-        {
-            if (x[0] == myLogic.getAppleX && y[0] == 432)
-            {
-                AppleEaten.Play();
-                dots++;
-                myLogic.createApple(SIZE, DOT_SIZE, x, y);
-                counterScore++; 
-                //UpdateSpeed();
-                textbox.SetResourceReference(TagProperty, "Score");
-                scoreLabel.Content = textbox.Tag + " : " + counterScore;
-            }
-        }*/
 
         private void checkCollisions()//
         {
@@ -443,29 +422,6 @@ namespace Snake
             lvl4Field.Children.Add(PressSpaceLb);
 
             return;
-        }
-
-        private void drawApple()//
-        {
-            if (myApple == null)
-            {
-                myApple = new Image();
-                myApple.Source = new BitmapImage(new Uri("Resources/Apple.png", UriKind.Relative));
-
-                myApple.HorizontalAlignment = HorizontalAlignment.Left;
-                myApple.VerticalAlignment = VerticalAlignment.Top;
-
-                myApple.Width = myApple.Height = DOT_SIZE;
-            }
-            lvl4Field.Children.Remove(myApple);
-
-            myApple.Margin = new Thickness
-            {
-                Left = myLogic.getAppleX,
-                Top = myLogic.getAppleY,
-            };
-
-            lvl4Field.Children.Add(myApple);
         }
 
         private void UpdateSpeed()//
