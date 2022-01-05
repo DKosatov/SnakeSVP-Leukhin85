@@ -40,7 +40,7 @@ namespace Snake
 
         private DispatcherTimer timer;    
 
-        private const int startSpeed = 75;
+        private const int startSpeed = 70;
         private const int speedSubstractor = 1;
         private int speed = startSpeed;    
 
@@ -131,21 +131,28 @@ namespace Snake
             if (topy[0] == 0)
             {
                 genb.generateBorders(); counterScore++; textbox.SetResourceReference(TagProperty, "Score"); scoreLabel.Content = textbox.Tag + " : " + counterScore; UpdateSpeed();
+                info.Text = genb.borderssize1.ToString();
+                info2.Text = genb.borderssize2.ToString();
+                info3.Text = genb.borderssize3.ToString();
+                info4.Text = genb.borderssize4.ToString();
+                info5.Text = genb.borderssize5.ToString();
+                info6.Text = genb.borderssize6.ToString();
             }
             if (right && x[0] <= (SIZE-2*DOT_SIZE))
             {
                 x[0] += DOT_SIZE;
             }
-            if (left && x[0] > 0)
+            if (left && x[0] > 16)
             {
                 x[0] -= DOT_SIZE;
             }
+            x0.Text = x[0].ToString();
         }
 
         private void checkCollisions()//
         {
-            if (topy[0]==432 && ((x[0]+16<=genb.borderssize2&& x[0] + 16 >= genb.borderssize1) || 
-                (x[0] + 16 <= genb.borderssize4 && x[0] + 16 >= genb.borderssize3) || (x[0] + 16 <= genb.borderssize6 && x[0] + 16 >= genb.borderssize5)))
+            if (topy[0]==432 && ((x[0]<=genb.borderssize2 && x[0] >= genb.borderssize1) || 
+                (x[0]  <= genb.borderssize4 && x[0]  >= genb.borderssize3) || (x[0]  <= genb.borderssize6 && x[0] >= genb.borderssize5)))
             {
                 isGameOver = true;
                 return;
@@ -164,6 +171,12 @@ namespace Snake
                 borderTop.HorizontalAlignment = borderBottom.HorizontalAlignment = borderMiddle.HorizontalAlignment = HorizontalAlignment.Left;
                 borderTop.VerticalAlignment = borderBottom.VerticalAlignment = borderMiddle.VerticalAlignment = VerticalAlignment.Top;
             }
+            _2info.Text = genb.borderssize1.ToString();
+            _2info2.Text = genb.borderssize2.ToString();
+            _2info3.Text = genb.borderssize3.ToString();
+            _2info4.Text = genb.borderssize4.ToString();
+            _2info5.Text = genb.borderssize5.ToString();
+            _2info6.Text = genb.borderssize6.ToString();
             borderTop.Width = genb.borderssize2 - genb.borderssize1;
             borderMiddle.Width = genb.borderssize4 - genb.borderssize3;
             borderBottom.Width = genb.borderssize6 - genb.borderssize5;
@@ -470,7 +483,7 @@ namespace Snake
                     if (isGameOver)
                     {
                         GameOverSound.Stop();
-                        speed = 75;
+                        speed = 70;
                         UpdateSpeed();
                         dots = 2;
                         counterScore = 0;

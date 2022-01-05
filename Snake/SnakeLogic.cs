@@ -39,7 +39,7 @@ namespace Snake
         public int setAppleY(int y) => appleY = y;
     }
 
-    public class applegen4
+    /*public class applegen4
     {
         private int appleX;
         private int appleY;
@@ -70,7 +70,7 @@ namespace Snake
         public int getAppleY => appleY;
         public int setAppleX(int x) => appleX = x;
         public int setAppleY(int y) => appleY = y;
-    }
+    }*/
 
     public class SpecialSnakeLogic
     {
