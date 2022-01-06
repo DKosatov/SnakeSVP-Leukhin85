@@ -130,7 +130,8 @@ namespace Snake
             else { topy[0] = 0; }
             if (topy[0] == 0)
             {
-                genb.generateBorders(); counterScore++; textbox.SetResourceReference(TagProperty, "Score"); scoreLabel.Content = textbox.Tag + " : " + counterScore; UpdateSpeed();
+                genb.generateBorders(); counterScore++; textbox.SetResourceReference(TagProperty, "Score"); 
+                scoreLabel.Content = textbox.Tag + " : " + counterScore; UpdateSpeed();
             }
             if (right && x[0] <= (SIZE-2*DOT_SIZE))
             {
@@ -172,7 +173,6 @@ namespace Snake
                 borderTop.Margin = new Thickness
                 {
                     Left = genb.borderssize1,
-                    //Right = genb.borderssize2,
                     Top = topy[0],
                 };
                 lvl4Field.Children.Add(borderTop);
@@ -181,7 +181,6 @@ namespace Snake
                 borderMiddle.Margin = new Thickness
                 {
                     Left = genb.borderssize3,
-                    //Right = genb.borderssize4,
                     Top = topy[0],
                 };
                 lvl4Field.Children.Add(borderMiddle);
@@ -190,7 +189,6 @@ namespace Snake
                 borderBottom.Margin = new Thickness
                 {
                     Left = genb.borderssize5,
-                    //Right = genb.borderssize6,
                     Top = topy[0],
                 };
                 lvl4Field.Children.Add(borderBottom);
