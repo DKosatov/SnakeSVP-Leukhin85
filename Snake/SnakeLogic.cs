@@ -8,8 +8,8 @@ namespace Snake
 {
     public class SnakeLogic
     {
-        private int appleX;
-        private int appleY;
+        public int appleX;
+        public int appleY;
 
         private Random myLocalRandom = new Random();
 
