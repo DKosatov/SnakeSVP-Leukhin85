@@ -41,7 +41,7 @@ namespace Snake
         private DispatcherTimer timer;    
 
         private const int startSpeed = 70;
-        private const int speedSubstractor = 1;
+        private const int speedSubstractor = 2;
         private int speed = startSpeed;    
 
         SoundPlayer GameOverSound = new SoundPlayer("../../Resources/gameover.wav");
@@ -177,14 +177,15 @@ namespace Snake
             _2info4.Text = genb.borderssize4.ToString();
             _2info5.Text = genb.borderssize5.ToString();
             _2info6.Text = genb.borderssize6.ToString();
-            borderTop.Width = genb.borderssize2 - genb.borderssize1;
-            borderMiddle.Width = genb.borderssize4 - genb.borderssize3;
+            borderTop.Width = genb.borderssize2+18 - genb.borderssize1;
+            borderMiddle.Width = genb.borderssize4+18 - genb.borderssize3;
             borderBottom.Width = genb.borderssize6 - genb.borderssize5;
             borderTop.Height = borderBottom.Height = borderMiddle.Height = DOT_SIZE;
             lvl4Field.Children.Remove(borderTop);
                 borderTop.Margin = new Thickness
                 {
                     Left = genb.borderssize1,
+                    //Right = genb.borderssize2,
                     Top = topy[0],
                 };
                 lvl4Field.Children.Add(borderTop);
@@ -193,6 +194,7 @@ namespace Snake
                 borderMiddle.Margin = new Thickness
                 {
                     Left = genb.borderssize3,
+                    //Right = genb.borderssize4,
                     Top = topy[0],
                 };
                 lvl4Field.Children.Add(borderMiddle);
@@ -201,6 +203,7 @@ namespace Snake
                 borderBottom.Margin = new Thickness
                 {
                     Left = genb.borderssize5,
+                    //Right = genb.borderssize6,
                     Top = topy[0],
                 };
                 lvl4Field.Children.Add(borderBottom);

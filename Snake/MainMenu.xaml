@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="2.jpg"/>
         </Grid.Background>
-        <Button Content="{DynamicResource SETTINGS}" HorizontalAlignment="Left" Margin="295.24,209.452,0,0" VerticalAlignment="Top" Width="92" Height="25" Click="Settings_Click" Background="Black" Foreground="White" BorderBrush="White" FontFamily="Castellar"/>
+        <Button Content="{DynamicResource SETTINGS}" HorizontalAlignment="Left" Margin="287.122,209.452,0,0" VerticalAlignment="Top" Width="105" Height="25" Click="Settings_Click" Background="Black" Foreground="White" BorderBrush="White" FontFamily="Castellar"/>
         <Button Content="{DynamicResource START}" HorizontalAlignment="Left" Margin="295.24,163.258,0,0" VerticalAlignment="Top" Width="92" Height="25" Background="Black" Foreground="White" BorderBrush="White" Click="Play_Click" FontFamily="Castellar"/>
         <TextBlock HorizontalAlignment="Left" Margin="289.207,80,0,0" TextWrapping="Wrap" Text="SNAKES" VerticalAlignment="Top" Height="29" Width="103" FontSize="24" Background="Black" Foreground="White" FontFamily="Castellar"/>
         <Button Content="{DynamicResource EXIT}" HorizontalAlignment="Left" Margin="295.24,256.258,0,0" VerticalAlignment="Top" Width="92" Height="25" Click="Exit_Click" Background="Black" Foreground="White" BorderBrush="White" FontFamily="Castellar"/>

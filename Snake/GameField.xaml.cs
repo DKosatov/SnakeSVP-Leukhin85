@@ -548,7 +548,7 @@ namespace Snake
             speedLabel.Content = speed_t + (startSpeed - speed) / speedSubstractor;
         }
 
-        private void myKeyDown(object sender, KeyEventArgs e)//
+        public void myKeyDown(object sender, KeyEventArgs e)//
         {
             switch (e.Key)
             {

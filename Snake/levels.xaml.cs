@@ -38,15 +38,6 @@ namespace Snake
             Close();
         }
 
-        private void lvlBack_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonClick.Play();
-            TitleMusic.Stop();
-            Window1 menu = new Window1();
-            menu.Show();
-            Close();
-        }
-
         private void lvl2_Click(object sender, RoutedEventArgs e)
         {
             ButtonClick.Play();
@@ -73,5 +64,15 @@ namespace Snake
             menu.Show();
             Close();
         }
+
+        private void lvlBack_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonClick.Play();
+            TitleMusic.Stop();
+            Window1 menu = new Window1();
+            menu.Show();
+            Close();
+        }
+
     }
 }
